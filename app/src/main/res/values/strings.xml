@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Моя школа</string>
+    <string name="text_input_login">Пользователь</string>
+    <string name="text_input_password">Пароль</string>
+    <string name="text_checkbox_gu">Аторизация через Госуслуги</string>
+    <string name="text_button_connection">Вход</string>
+
+    <string name="menu_lesson">Список предметов</string>
+    <string name="menu_schedule">Расписание</string>
+    <string name="menu_report">Отчёты</string>
+    <string name="menu_exit">Выход</string>
+
+    <string name="text_id">id предмета</string>
+    <string name="text_lesson_name">Название предмета</string>
+    <string name="text_lesson_grade">Оценок: 99</string>
+    <string name="text_lesson_average">Средняя: 9.99</string>
+    <string name="text_lesson_info">Нужно 5: 99</string>
+</resources>

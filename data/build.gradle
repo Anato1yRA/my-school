@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+
+    // Room
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk ProjectVersionSdk
+
+    defaultConfig {
+        minSdk ProjectVersionMinSdk
+        targetSdk ProjectVersionSdk
+
+        // Room
+        kapt{
+            arguments{
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled ProjectMinifyEnabled
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility ProjectJavaVersion
+        targetCompatibility ProjectJavaVersion
+    }
+
+    kotlinOptions {
+        jvmTarget = ProjectVersionJvmTarget
+    }
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:$core_ktx"
+
+    implementation project(path: ':domain')
+
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:$okhttp_version"
+
+    implementation "ru.gildor.coroutines:kotlin-coroutines-okhttp:$coroutines_okhttp_version"
+
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    implementation "androidx.lifecycle:lifecycle-livedata-core-ktx:$lifecycle_version"
+
+//    def retrofit_version = "2.9.0"
+//    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+//    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+}

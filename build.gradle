@@ -1,0 +1,32 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.1.3' apply false
+    id 'com.android.library' version '7.1.3' apply false
+    id 'org.jetbrains.kotlin.android' version '1.6.21' apply false
+    id 'org.jetbrains.kotlin.jvm' version '1.6.20' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    // project
+    ProjectVersionSdk = 32
+    ProjectVersionMinSdk = 28
+    ProjectJavaVersion = JavaVersion.VERSION_1_8
+    ProjectVersionJvmTarget = "1.8"
+    ProjectMinifyEnabled = false
+
+    // all
+    core_ktx = "1.7.0"
+
+    // app
+    lifecycle_version = "2.4.1"
+    koin_version = "3.2.0-beta-1"
+
+    // data
+    okhttp_version = "5.0.0-alpha.6"
+    coroutines_okhttp_version = "1.0"
+    room_version = "2.4.2"
+}

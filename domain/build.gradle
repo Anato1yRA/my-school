@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk ProjectVersionSdk
+
+    defaultConfig {
+        minSdk ProjectVersionMinSdk
+        targetSdk ProjectVersionSdk
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled ProjectMinifyEnabled
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility ProjectJavaVersion
+        targetCompatibility ProjectJavaVersion
+    }
+
+    kotlinOptions {
+        jvmTarget = ProjectVersionJvmTarget
+    }
+}
+
+dependencies {
+    implementation "androidx.lifecycle:lifecycle-livedata-core-ktx:$lifecycle_version"
+}
